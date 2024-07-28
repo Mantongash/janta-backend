@@ -6,7 +6,7 @@ export const router = Router();
 
 //signup
 router.post("/Register", async (req, res) => {
-  const { fullName,phoneNumber, email, password,userType } = req.body;
+  const { fullName,phoneNumber, email, password,userType, location, services } = req.body;
 
   try {
     const user = await User.findOne({ email });
@@ -20,6 +20,8 @@ router.post("/Register", async (req, res) => {
       email,
       password:hashedPassword,
       userType,
+      location,
+      services
     });
     const savedUser = await newUser.save();
     res.status(201).json(savedUser);
