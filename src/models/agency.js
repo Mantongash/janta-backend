@@ -6,6 +6,8 @@ const agencySchema = mongoose.Schema({
   email: { type: String, required: true, unique: true },
   location: { type: String, required: true },
   phoneNumber: { type: String, reqired: true },
+  uid: { type: String, reqired: true },
+
   image: { type: String },
 });
 export default mongoose.model("Agency", agencySchema);

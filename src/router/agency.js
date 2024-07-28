@@ -12,6 +12,7 @@ router.post("/add", async (req, res) => {
       email,
       location,
       phoneNumber,
+      uid,
       image,
     } = req.body;
     try {
@@ -27,6 +28,7 @@ router.post("/add", async (req, res) => {
         email,
         location,
         phoneNumber,
+        uid,
         image,
       });
       const savedAgency = await newAgency.save();
