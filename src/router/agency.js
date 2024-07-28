@@ -77,7 +77,7 @@ router.patch("/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const agencyToUpdate = await Agency.findByIdAndUpdate(
-      { id },
+      id,
       req.body,
       {
         new: true,
