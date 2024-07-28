@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const agencySchema = mongoose.Schema({
+const agencySchema = new mongoose.Schema({
   agencyName: { type: String, reqired: true },
   services: { type: Array, required: true },
   agencyDescription: { type: String, required: true },
