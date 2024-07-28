@@ -76,9 +76,13 @@ router.delete("/:id", async (req, res) => {
 router.patch("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const agencyToUpdate = await Agency.findOneAndUpdate({_id:id}, req.body, {
-      new: true,
-    });
+    const agencyToUpdate = await Agency.findByIdAndUpdate(
+      { id },
+      req.body,
+      {
+        new: true,
+      }
+    );
     res.status(200).json(agencyToUpdate);
   } catch (error) {
     return res.status(500).json({ message: error });
